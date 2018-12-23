@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { JoueurComponent } from './joueur/joueur.component';
-import { PersonnageComponent } from './personnage/personnage.component';
-import { MyTableComponent } from './my-table/my-table.component';
+import { JoueurComponent } from './Components/joueur/joueur.component';
+import { PersonnageComponent } from './Components/personnage/personnage.component';
+import { MyTableComponent } from './Components/my-table/my-table.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MyTableComponent } from './my-table/my-table.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
