@@ -1,3 +1,24 @@
-<p>
-  my-table works!
-</p>
+<div *ngFor="let table of tables">
+  <div class="card border-light mb-3" style="margin: auto; width: 33%; padding: 10px;">
+      <a class="card-header" [routerLink]="['/table', table.id]">{{table.Name}}</a>
+      <!----<a class="btn btn-outline-warning" href="{{ path('updatemytable', {'id': table.id }) }}">Changer</a>  
+      <a class="btn btn-outline-danger" href="{{ path('deletemytable', {'id': table.id }) }}">Supprimé</a>
+      -->
+      <div class="card-body">
+          <h4 class="card-title"> {{table.Name}} </h4>
+          <p> Maître du jeu: {{table.Mj}}</p>
+          <ul>
+              <div *ngFor="let joueur of table.joueurs">
+              <li class="card-text"> {{joueur.name}}
+              </li>
+            </div>
+          </ul>
+          <ul>
+              <div *ngFor="let perso of table.Personnages">
+                  <li class="card-text"> {{perso.Name}}
+                  </li>
+                </div>
+          </ul>
+      </div>
+  </div>
+</div>

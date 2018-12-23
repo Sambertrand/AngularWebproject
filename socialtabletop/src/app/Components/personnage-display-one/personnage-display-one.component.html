@@ -1,0 +1,11 @@
+<div class="card border-light mb-3" style="margin: auto; width: 33%; padding: 10px;">
+    <a  class="card-header">{{personnage.Name}} </a>           
+    <!----<a class="btn btn-outline-warning" href="{{ path('updatepersonnage', {'id': per.id }) }}">Changer</a>  
+    <a class="btn btn-outline-danger" href="{{ path('deletepersonnage', {'id': per.id }) }}">Supprimé</a>
+    -->
+    <div class="card-body">
+        <h4 class="card-title"> {{personnage.Name}} </h4>
+        <p> Joueur : {{personnage.joueur.name}} <br>
+            Table : {{personnage.TableDeJeux.name}} </p>
+    </div>
+</div>

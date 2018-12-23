@@ -1,1 +1,23 @@
-{{joueur}}
+<div *ngFor="let joueur of joueurs">
+    <div class="card border-light mb-3" style="margin: auto; width: 33%; padding: 10px;">
+        <a  class="card-header" [routerLink]="['/joueur', joueur.id]">{{joueur.name}} </a>
+        <!----<a class="btn btn-outline-warning" [routerLink]="['/joueur', joueur.id]">Changer</a>
+            <button class="btn btn-outline-danger" (click)="deleteJoueur(joueur.id)">Supprimer</button>
+        -->
+        <div class="card-body">
+        <h4 class="card-title"> {{joueur.name}} </h4>
+        <h5> Tables:</h5>
+        <ul>
+            <div *ngFor="let table of joueur.Tables">
+                <li class="card-text"> {{table.name}}
+            </div>
+        </ul>
+        <h5> Personnages:</h5>
+        <ul>
+            <div *ngFor="let persos of joueur.Personnage">
+                <li class="card-text"> {{persos.Name}}
+            </div>
+        </ul>
+        </div>
+    </div>
+</div>

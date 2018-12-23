@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, ObservableInput } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { joueur } from 'src/app/Classes/joueur';
 
 @Injectable({
@@ -18,5 +18,9 @@ export class JoueurService {
 
   getJoueur(id: string): Observable<joueur> {
     return this.http.get<joueur>(this.url + '/joueur/' + id, { responseType: 'json' });
+  }
+  
+ deleteJoueur(id: string): Observable<any> {
+  return this.http.delete(this.url +  '/deletejoueur/' + id)
   }
 }

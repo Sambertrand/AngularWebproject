@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import {mytable} from 'src/app/Classes/my-table';
 import {TableService}from 'src/app/Services/Table/table.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
-  selector: 'app-my-table',
-  templateUrl: './my-table.component.html',
-  styleUrls: ['./my-table.component.css']
+  selector: 'app-my-table-display-one',
+  templateUrl: './my-table-display-one.component.html',
+  styleUrls: ['./my-table-display-one.component.css']
 })
-export class MyTableComponent implements OnInit {
-  tables: mytable[];
+export class MyTableDisplayOneComponent implements OnInit {
+  table: mytable;
   constructor( private tableService: TableService,
-    private router: Router) { }
+    private route: ActivatedRoute,
+      private router: Router,) { }
   ngOnInit() {
     this.getTable();
-    console.log(this.tables)
+    console.log(this.table)
   }
 
 
   getTable() {
-    this.tableService.getTables().subscribe(
+    let id = this.route.snapshot.paramMap.get('id');
+    this.tableService.getTable(id).subscribe(
       (data) => {
-        this.tables = data;
-        console.log( this.tables);
+        this.table = data;
+        console.log( this.table);
       },
       (err) => {
         console.log(err);
@@ -44,3 +47,4 @@ export class MyTableComponent implements OnInit {
     );
   }
 }
+

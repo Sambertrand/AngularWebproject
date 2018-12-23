@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import {joueur} from 'src/app/Classes/joueur';
 import {JoueurService}from 'src/app/Services/Joueur/joueur.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-joueur',
-  templateUrl: './joueur.component.html',
-  styleUrls: ['./joueur.component.css']
+  selector: 'app-joueur-display-one',
+  templateUrl: './joueur-display-one.component.html',
+  styleUrls: ['./joueur-display-one.component.css']
 })
-export class JoueurComponent implements OnInit {
-  joueurs: joueur[];
+export class JoueurDisplayOneComponent implements OnInit {
+  joueur: joueur;
   constructor( private jouerService: JoueurService,
-    private router: Router) { }
+    private route: ActivatedRoute,
+      private router: Router,) { }
   ngOnInit() {
     this.getjoueur();
-    console.log(this.joueurs)
+    console.log(this.joueur)
   }
 
 
   getjoueur() {
-    this.jouerService.getJoueurs().subscribe(
+    let id = this.route.snapshot.paramMap.get('id');
+    this.jouerService.getJoueur(id).subscribe(
       (data) => {
-        this.joueurs = data;
-        console.log( this.joueurs);
+        this.joueur = data;
+        console.log(this.joueur);
       },
       (err) => {
         console.log(err);
