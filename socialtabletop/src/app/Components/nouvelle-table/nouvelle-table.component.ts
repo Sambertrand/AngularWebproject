@@ -19,21 +19,25 @@ export class NouvelleTableComponent implements OnInit {
     private jouerService: JoueurService,
     private tableService: TableService) {
       this.newTable = new mytable();
+      this.selection = [];
     }
 
   ngOnInit() {
     this.getjoueur();
   }
 
-  addjoueur(joueur){
+  addplayer(joueur){
     this.selection.push(joueur);
+    console.log(this.selection);
   }
+
 
   getjoueur() {
     this.jouerService.getJoueurs().subscribe(
       (data) => {
         this.joueurs = data;
         console.log( this.joueurs);
+        console.log(this.selection);
       },
       (err) => {
         console.log(err);
@@ -42,7 +46,7 @@ export class NouvelleTableComponent implements OnInit {
   }
 
   onSubmit() {
-    this.addjoueur(joueur)
+    this.newTable.joueurs = this.selection;
     if (this.newTable.name !== undefined && this.newTable.joueurs !== undefined) {
       this.tableService.postTables(this.newTable).subscribe(
         (data) => {
