@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { joueur } from 'src/app/Classes/joueur';
 
@@ -23,4 +23,14 @@ export class JoueurService {
  deleteJoueur(id: string): Observable<any> {
   return this.http.delete(this.url +  '/deletejoueur/' + id)
   }
+ 
+ postJoueur(joueur: joueur): Observable<any> {
+  const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 
+    'Access-Control-Allow-Origin' : '*', })
+  };
+
+  return this.http.post<joueur>(this.url + '/newjoueur', joueur, httpOptions);
+  }
 }
+

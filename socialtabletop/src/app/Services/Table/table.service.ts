@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { mytable } from 'src/app/Classes/my-table';
 
@@ -22,5 +22,14 @@ export class TableService {
   
  deleteTable(id: string): Observable<any> {
   return this.http.delete(this.url +  '/deletemytable/' + id)
+  }
+
+  postTables(table: mytable): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 
+      'Access-Control-Allow-Origin' : '*', })
+    };
+
+    return this.http.post<mytable>(this.url + '/newtable', table, httpOptions);
   }
 }

@@ -2,8 +2,8 @@
   <div class="card border-light mb-3" style="margin: auto; width: 33%; padding: 10px;">
       <a  class="card-header" [routerLink]="['/personnage', per.id]">{{per.Name}} </a>           
       <!----<a class="btn btn-outline-warning" href="{{ path('updatepersonnage', {'id': per.id }) }}">Changer</a>  
-      <a class="btn btn-outline-danger" href="{{ path('deletepersonnage', {'id': per.id }) }}">Supprimé</a>
       -->
+      <a class="btn btn-outline-danger" (click)="deletePersonnage(per.id)">Supprimer</a>
       <div class="card-body">
           <h4 class="card-title"> {{per.Name}} </h4>
           <p> Joueur : {{per.joueur.name}} <br>

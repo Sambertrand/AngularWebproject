@@ -9,7 +9,10 @@ import { MyTableComponent } from './Components/my-table/my-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JoueurDisplayOneComponent } from './Components/joueur-display-one/joueur-display-one.component';
 import { PersonnageDisplayOneComponent } from './Components/personnage-display-one/personnage-display-one.component';
-import { MyTableDisplayOneComponent } from './Components/my-table-display-one/my-table-display-one.component'; 
+import { MyTableDisplayOneComponent } from './Components/my-table-display-one/my-table-display-one.component';
+import { NouveauJoueurComponent } from './Components/nouveau-joueur/nouveau-joueur.component';
+import { NouveauPersonnageComponent } from './Components/nouveau-personnage/nouveau-personnage.component';
+import { NouvelleTableComponent } from './Components/nouvelle-table/nouvelle-table.component'; 
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { MyTableDisplayOneComponent } from './Components/my-table-display-one/my
     MyTableComponent,
     JoueurDisplayOneComponent,
     PersonnageDisplayOneComponent,
-    MyTableDisplayOneComponent
+    MyTableDisplayOneComponent,
+    NouveauJoueurComponent,
+    NouveauPersonnageComponent,
+    NouvelleTableComponent
   ],
   imports: [
     BrowserModule,

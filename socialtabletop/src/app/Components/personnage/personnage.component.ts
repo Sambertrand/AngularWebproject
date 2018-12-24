@@ -32,7 +32,6 @@ export class PersonnageComponent implements OnInit {
   }
 
   deletePersonnage(id) {
-    /* Delete the category into database */
     this.personnageService.deletePersonnage(id).subscribe(
       (data) => {
         if (data.valid == true) {

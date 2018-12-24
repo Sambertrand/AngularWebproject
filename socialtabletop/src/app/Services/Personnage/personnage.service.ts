@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {personnage} from 'src/app/Classes/personnage';
 import { Observable } from 'rxjs';
 
@@ -24,4 +24,14 @@ export class PersonnageService {
  deletePersonnage(id: string): Observable<any> {
   return this.http.delete(this.url +  '/deletepersonnage/' + id)
   }
-}
+
+  postPersonnage(personnage: personnage): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 
+      'Access-Control-Allow-Origin' : '*', })
+    };
+  
+    return this.http.post<personnage>(this.url + '/newpersonnage', personnage, httpOptions);
+    }
+  }
+  

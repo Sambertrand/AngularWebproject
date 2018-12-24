@@ -31,7 +31,6 @@ export class JoueurComponent implements OnInit {
   }
 
   deleteJoueur(id) {
-    /* Delete the category into database */
     this.jouerService.deleteJoueur(id).subscribe(
       (data) => {
         if (data.valid == true) {

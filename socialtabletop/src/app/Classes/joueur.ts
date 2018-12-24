@@ -5,8 +5,5 @@ export class joueur {
     id: number;
     name: string;
     Personnage: personnage[];
-    Tables: mytable[]
-    constructor(id) { 
-        this.id = id;
-      }
+    Tables: mytable[];
 }
