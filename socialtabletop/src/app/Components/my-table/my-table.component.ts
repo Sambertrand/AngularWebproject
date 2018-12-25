@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   templateUrl: './my-table.component.html',
   styleUrls: ['./my-table.component.css']
 })
+
+//component for the display of all the tables
 export class MyTableComponent implements OnInit {
   tables: mytable[];
   constructor( private tableService: TableService,
@@ -17,7 +19,7 @@ export class MyTableComponent implements OnInit {
     console.log(this.tables)
   }
 
-
+  //API acces to GET tables
   getTable() {
     this.tableService.getTables().subscribe(
       (data) => {
@@ -30,6 +32,7 @@ export class MyTableComponent implements OnInit {
     );
   }
 
+  //API accesto DELETE a table
   deleteTable(id) {
     this.tableService.deleteTable(id).subscribe(
       (data) => {

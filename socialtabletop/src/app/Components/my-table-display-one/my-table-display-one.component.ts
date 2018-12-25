@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './my-table-display-one.component.html',
   styleUrls: ['./my-table-display-one.component.css']
 })
+//component for the display of a table
 export class MyTableDisplayOneComponent implements OnInit {
   table: mytable;
   constructor( private tableService: TableService,
@@ -19,7 +20,7 @@ export class MyTableDisplayOneComponent implements OnInit {
     console.log(this.table)
   }
 
-
+  //API acces to GET a Table
   getTable() {
     let id = this.route.snapshot.paramMap.get('id');
     this.tableService.getTable(id).subscribe(
@@ -33,6 +34,7 @@ export class MyTableDisplayOneComponent implements OnInit {
     );
   }
 
+  //API acces to DELETE a table
   deleteTable(id) {
     this.tableService.deleteTable(id).subscribe(
       (data) => {

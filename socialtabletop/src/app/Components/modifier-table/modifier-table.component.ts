@@ -10,17 +10,16 @@ import {TableService}from 'src/app/Services/Table/table.service';
   templateUrl: './modifier-table.component.html',
   styleUrls: ['./modifier-table.component.css']
 })
+//component for the mofification of a table
 export class ModifierTableComponent implements OnInit {
   table: mytable;
   joueurs: joueur[];
-  selection: joueur[];
   joueur: joueur;
 
   constructor(private router: Router,    
     private route: ActivatedRoute,
     private jouerService: JoueurService,
     private tableService: TableService) {
-      this.selection = [];
     }
 
   ngOnInit() {
@@ -28,6 +27,7 @@ export class ModifierTableComponent implements OnInit {
     this.getjoueur();
   }
 
+  //API acces GET tables
   getTable() {
     let id = this.route.snapshot.paramMap.get('id');
     this.tableService.getTable(id).subscribe(
@@ -41,12 +41,8 @@ export class ModifierTableComponent implements OnInit {
     );
   }
 
-  addplayer(){
-    this.selection.push();
-    console.log(this.selection);
-  }
 
-
+ //API acces to GET joueurs
   getjoueur() {
     this.jouerService.getJoueurs().subscribe(
       (data) => {
@@ -58,10 +54,10 @@ export class ModifierTableComponent implements OnInit {
     );
   }
 
+  //save to db via API
   onSubmit() {
     console.log(this.table);
-    this.table.joueurs = this.selection;
-    if (this.table.name !== undefined && this.table.joueurs !== undefined) {
+    if (this.table.Name !== undefined && this.table.joueurs !== undefined) {
       this.tableService.postTables(this.table).subscribe(
         (data) => {
           if (data.valid == true) {

@@ -6,6 +6,7 @@ import { mytable } from 'src/app/Classes/my-table';
 @Injectable({
   providedIn: 'root'
 })
+//class that provides all the API acceses needed for Table
 export class TableService {
 
   private url = "http://localhost:8000/API";

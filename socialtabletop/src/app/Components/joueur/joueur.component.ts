@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   templateUrl: './joueur.component.html',
   styleUrls: ['./joueur.component.css']
 })
+
+//component for the display of all the joueurs
 export class JoueurComponent implements OnInit {
   joueurs: joueur[];
   constructor( private jouerService: JoueurService,
@@ -17,7 +19,7 @@ export class JoueurComponent implements OnInit {
     console.log(this.joueurs)
   }
 
-
+  //api acces to get
   getjoueur() {
     this.jouerService.getJoueurs().subscribe(
       (data) => {
@@ -30,6 +32,7 @@ export class JoueurComponent implements OnInit {
     );
   }
 
+  //api acces to delete
   deleteJoueur(id) {
     this.jouerService.deleteJoueur(id).subscribe(
       (data) => {

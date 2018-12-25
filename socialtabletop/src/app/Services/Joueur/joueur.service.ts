@@ -6,6 +6,7 @@ import { joueur } from 'src/app/Classes/joueur';
 @Injectable({
   providedIn: 'root'
 })
+//class that provides all the API acceses needed for Joueur
 export class JoueurService {
 
   private url = "http://localhost:8000/API";

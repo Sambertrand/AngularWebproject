@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './joueur-display-one.component.html',
   styleUrls: ['./joueur-display-one.component.css']
 })
+//component for the display of one joueur
 export class JoueurDisplayOneComponent implements OnInit {
   joueur: joueur;
   constructor( private jouerService: JoueurService,
@@ -18,7 +19,7 @@ export class JoueurDisplayOneComponent implements OnInit {
     console.log(this.joueur)
   }
 
-
+  //api acces to GET
   getjoueur() {
     let id = this.route.snapshot.paramMap.get('id');
     this.jouerService.getJoueur(id).subscribe(
@@ -31,7 +32,8 @@ export class JoueurDisplayOneComponent implements OnInit {
       }
     );
   }
-
+  
+  //API acces to DELETE
   deleteJoueur(id) {
     /* Delete the category into database */
     this.jouerService.deleteJoueur(id).subscribe(

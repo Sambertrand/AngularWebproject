@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+//class that provides all the API acceses needed for Personnage
 export class PersonnageService {
 
   private url = "http://localhost:8000/API";

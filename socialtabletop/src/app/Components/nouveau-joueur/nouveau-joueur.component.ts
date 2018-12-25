@@ -8,6 +8,8 @@ import {JoueurService}from 'src/app/Services/Joueur/joueur.service';
   templateUrl: './nouveau-joueur.component.html',
   styleUrls: ['./nouveau-joueur.component.css']
 })
+
+//component for the creation of a joueur
 export class NouveauJoueurComponent implements OnInit {
   newJoueur: joueur;
 
@@ -19,6 +21,7 @@ export class NouveauJoueurComponent implements OnInit {
   ngOnInit() {
   }
 
+  //save to db via API
   onSubmit() {
 
     if (this.newJoueur.name !== undefined) {

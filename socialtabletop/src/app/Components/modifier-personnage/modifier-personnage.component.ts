@@ -12,6 +12,7 @@ import {TableService}from 'src/app/Services/Table/table.service';
   templateUrl: './modifier-personnage.component.html',
   styleUrls: ['./modifier-personnage.component.css']
 })
+//component for the mofification of a personnage
 export class ModifierPersonnageComponent implements OnInit {
   joueurs: joueur[];
   tables: mytable[];
@@ -29,6 +30,7 @@ export class ModifierPersonnageComponent implements OnInit {
     this.getTable();
   }
   
+  //API acces GET players
   getjoueur() {
     this.jouerService.getJoueurs().subscribe(
       (data) => {
@@ -40,6 +42,7 @@ export class ModifierPersonnageComponent implements OnInit {
     );
   }
 
+  //API acces GET Tables
   getTable() {
     this.tableService.getTables().subscribe(
       (data) => {
@@ -51,7 +54,7 @@ export class ModifierPersonnageComponent implements OnInit {
     );
   }
 
-
+ //API acces GET personnages
   getPersonnage() {
     let id = this.route.snapshot.paramMap.get('id');
     this.personnageService.getPersonnage(id).subscribe(
@@ -65,6 +68,7 @@ export class ModifierPersonnageComponent implements OnInit {
     );
   }
 
+  //save to db via api
   onSubmit() {
 
     if (this.personnage.Name !== undefined && this.personnage.joueur !== undefined && this.personnage.table !== undefined) {

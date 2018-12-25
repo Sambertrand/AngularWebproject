@@ -9,6 +9,8 @@ import {PersonnageService} from 'src/app/Services/Personnage/personnage.service'
   templateUrl: './personnage-display-one.component.html',
   styleUrls: ['./personnage-display-one.component.css']
 })
+
+//component for the display of a personnage
 export class PersonnageDisplayOneComponent implements OnInit {
   personnage: personnage;
   constructor( private personnageService: PersonnageService,
@@ -20,6 +22,7 @@ export class PersonnageDisplayOneComponent implements OnInit {
   }
 
 
+  //API to get a personnage
   getPersonnage() {
     let id = this.route.snapshot.paramMap.get('id');
     this.personnageService.getPersonnage(id).subscribe(
@@ -33,6 +36,7 @@ export class PersonnageDisplayOneComponent implements OnInit {
     );
   }
 
+  //API acces to DELETE a personnage
   deletePersonnage(id) {
     this.personnageService.deletePersonnage(id).subscribe(
       (data) => {

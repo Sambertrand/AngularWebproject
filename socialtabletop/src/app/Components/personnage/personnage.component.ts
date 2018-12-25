@@ -8,6 +8,7 @@ import {PersonnageService} from 'src/app/Services/Personnage/personnage.service'
   templateUrl: './personnage.component.html',
   styleUrls: ['./personnage.component.css']
 })
+//component for the display of all the personnages
 export class PersonnageComponent implements OnInit {
     personnages: personnage[];
 
@@ -18,6 +19,7 @@ export class PersonnageComponent implements OnInit {
   }
 
 
+  //API acces t GET the personnages
   getPersonnage() {
     this.personnageService.getPersonnages().subscribe(
       (data) => {
@@ -30,6 +32,7 @@ export class PersonnageComponent implements OnInit {
     );
   }
 
+  //API acces to DELETE personnage
   deletePersonnage(id) {
     this.personnageService.deletePersonnage(id).subscribe(
       (data) => {

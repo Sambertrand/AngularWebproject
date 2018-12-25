@@ -10,6 +10,7 @@ import {TableService}from 'src/app/Services/Table/table.service';
   templateUrl: './nouvelle-table.component.html',
   styleUrls: ['./nouvelle-table.component.css']
 })
+//component for the creation of a table
 export class NouvelleTableComponent implements OnInit {
   joueurs: joueur[];
   newTable: mytable;
@@ -25,6 +26,7 @@ export class NouvelleTableComponent implements OnInit {
   }
 
 
+  //API acces to GET joueurs
   getjoueur() {
     this.jouerService.getJoueurs().subscribe(
       (data) => {
@@ -37,9 +39,10 @@ export class NouvelleTableComponent implements OnInit {
     );
   }
 
+  //save ot db via API
   onSubmit() {
     console.log(this.newTable);
-    if (this.newTable.name !== undefined && this.newTable.joueurs !== undefined) {
+    if (this.newTable.Name !== undefined && this.newTable.joueurs !== undefined) {
       this.tableService.postTables(this.newTable).subscribe(
         (data) => {
           if (data.valid == true) {

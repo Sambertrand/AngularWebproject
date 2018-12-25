@@ -8,6 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './modifier-joueur.component.html',
   styleUrls: ['./modifier-joueur.component.css']
 })
+
+//component for the mofification of a player
 export class ModifierJoueurComponent implements OnInit {
   joueur: joueur;
   constructor( private jouerService: JoueurService,
@@ -18,7 +20,7 @@ export class ModifierJoueurComponent implements OnInit {
     console.log(this.joueur)
   }
 
-
+  //API acces to GET
   getjoueur() {
     let id = this.route.snapshot.paramMap.get('id');
     this.jouerService.getJoueur(id).subscribe(
@@ -31,6 +33,8 @@ export class ModifierJoueurComponent implements OnInit {
       }
     );
   }
+
+  //save to API
   onSubmit() {
 
     if (this.joueur.name !== undefined) {

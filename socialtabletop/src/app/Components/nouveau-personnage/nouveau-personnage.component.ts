@@ -12,6 +12,7 @@ import {TableService}from 'src/app/Services/Table/table.service';
   templateUrl: './nouveau-personnage.component.html',
   styleUrls: ['./nouveau-personnage.component.css']
 })
+//component for the creation of a personnage
 export class NouveauPersonnageComponent implements OnInit {
   newPersonnage: personnage;
   joueurs: joueur[];
@@ -29,6 +30,7 @@ export class NouveauPersonnageComponent implements OnInit {
     this.getTable();
   }
 
+  //API acces to GET joueurs
   getjoueur() {
     this.jouerService.getJoueurs().subscribe(
       (data) => {
@@ -41,6 +43,7 @@ export class NouveauPersonnageComponent implements OnInit {
     );
   }
 
+  //API acces to GET Tables
   getTable() {
     this.tableService.getTables().subscribe(
       (data) => {
@@ -53,6 +56,7 @@ export class NouveauPersonnageComponent implements OnInit {
     );
   }
 
+  //save to db via API
   onSubmit() {
 
     if (this.newPersonnage.Name !== undefined && this.newPersonnage.joueur !== undefined && this.newPersonnage.table !== undefined) {
