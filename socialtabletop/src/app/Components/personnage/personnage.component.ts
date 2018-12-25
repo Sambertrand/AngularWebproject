@@ -9,13 +9,12 @@ import {PersonnageService} from 'src/app/Services/Personnage/personnage.service'
   styleUrls: ['./personnage.component.css']
 })
 export class PersonnageComponent implements OnInit {
-  
-  personnages: personnage[];
+    personnages: personnage[];
+
   constructor( private personnageService: PersonnageService,
     private router: Router) { }
   ngOnInit() {
     this.getPersonnage();
-    console.log(this.personnages)
   }
 
 

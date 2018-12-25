@@ -1,0 +1,26 @@
+<div id="form-error" style="display: none; color: red; size: 20px;">
+  champ manquant
+</div>
+<div id="send-error" style="display: none; color: red; size: 20px;">
+  Erreur de connexion
+</div>
+
+<form style="width:25%;" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Nom du Personnage</label>
+    <input class="form-control form-control-lg" type="text" placeholder="{{personnage.Name}}" [(ngModel)]="personnage.Name" name="Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1" class="col-form-label col-form-label-lg">joueur (actuellement {{personnage.joueur.name}})</label>
+    <select class="form-control" [(ngModel)]="personnage.joueur" name="joueurs">
+        <option *ngFor="let joueur of joueurs" [ngValue]="joueur.id">{{ joueur.name }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1" class="col-form-label col-form-label-lg">table (actuellement {{personnage.TableDeJeux.name}})</label>
+    <select class="form-control" [(ngModel)]="personnage.table" name="table">
+        <option *ngFor="let table of tables" [ngValue]="table.id">{{table.Name}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-lg btn-success">Submit</button>
+</form> 

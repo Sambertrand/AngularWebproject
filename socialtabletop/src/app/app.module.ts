@@ -12,7 +12,10 @@ import { PersonnageDisplayOneComponent } from './Components/personnage-display-o
 import { MyTableDisplayOneComponent } from './Components/my-table-display-one/my-table-display-one.component';
 import { NouveauJoueurComponent } from './Components/nouveau-joueur/nouveau-joueur.component';
 import { NouveauPersonnageComponent } from './Components/nouveau-personnage/nouveau-personnage.component';
-import { NouvelleTableComponent } from './Components/nouvelle-table/nouvelle-table.component'; 
+import { NouvelleTableComponent } from './Components/nouvelle-table/nouvelle-table.component';
+import { ModifierJoueurComponent } from './Components/modifier-joueur/modifier-joueur.component';
+import { ModifierPersonnageComponent } from './Components/modifier-personnage/modifier-personnage.component';
+import { ModifierTableComponent } from './Components/modifier-table/modifier-table.component'; 
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { NouvelleTableComponent } from './Components/nouvelle-table/nouvelle-tab
     MyTableDisplayOneComponent,
     NouveauJoueurComponent,
     NouveauPersonnageComponent,
-    NouvelleTableComponent
+    NouvelleTableComponent,
+    ModifierJoueurComponent,
+    ModifierPersonnageComponent,
+    ModifierTableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div id="form-error" style="display: none; color: red; size: 20px;">
+  champ manquant
+</div>
+<div id="send-error" style="display: none; color: red; size: 20px;">
+  Erreur de connexion
+</div>
+
+<form style="width:25%;" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Nom du joueur</label>
+    <input class="form-control form-control-lg" type="text" placeholder="{{joueur.name}}" [(ngModel)]="joueur.name" name="name">
+  </div>
+  <button type="submit" class="btn btn-lg btn-success">Submit</button>
+</form>

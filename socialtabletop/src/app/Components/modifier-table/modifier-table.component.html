@@ -8,10 +8,10 @@
 <form style="width:25%;" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label class="col-form-label col-form-label-lg" for="inputLarge">Nom de la Table</label>
-    <input class="form-control form-control-lg" type="text" placeholder="Nom de la table" [(ngModel)]="newTable.name" name="name">
+    <input class="form-control form-control-lg" type="text" placeholder="{{table.Name}}" [(ngModel)]="table.Name" name="name">
   </div>
   <div class="form-group">
-      <select multiple [(ngModel)]="newTable.joueurs" name="joueurs" >
+      <select multiple [(ngModel)]="table.joueurs" name="joueurs" >
         <option *ngFor="let joueur of joueurs" [ngValue]="joueur" >{{joueur.name}}</option>
       </select>
   </div>

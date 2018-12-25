@@ -34,7 +34,6 @@ export class MyTableDisplayOneComponent implements OnInit {
   }
 
   deleteTable(id) {
-    /* Delete the category into database */
     this.tableService.deleteTable(id).subscribe(
       (data) => {
         if (data.valid == true) {

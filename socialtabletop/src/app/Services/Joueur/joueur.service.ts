@@ -32,5 +32,14 @@ export class JoueurService {
 
   return this.http.post<joueur>(this.url + '/newjoueur', joueur, httpOptions);
   }
+  
+  putJoueur(joueur: joueur,  id:number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 
+      'Access-Control-Allow-Origin' : '*', })
+    };
+  
+    return this.http.post<joueur>(this.url + '/updatejoueur/' + id, joueur, httpOptions);
+    }
 }
 

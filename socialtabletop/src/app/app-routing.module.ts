@@ -10,6 +10,9 @@ import { MyTableDisplayOneComponent } from './Components/my-table-display-one/my
 import { NouveauJoueurComponent } from './Components/nouveau-joueur/nouveau-joueur.component';
 import { NouveauPersonnageComponent } from './Components/nouveau-personnage/nouveau-personnage.component';
 import { NouvelleTableComponent } from './Components/nouvelle-table/nouvelle-table.component'; 
+import { ModifierJoueurComponent } from './Components/modifier-joueur/modifier-joueur.component'; 
+import { ModifierPersonnageComponent } from './Components/modifier-personnage/modifier-personnage.component'; 
+import { ModifierTableComponent } from './Components/modifier-table/modifier-table.component'; 
 
 const routes: Routes = [
   { path: '', redirectTo: 'joueurs', pathMatch: 'full' },
@@ -21,7 +24,10 @@ const routes: Routes = [
   { path: 'table/:id', component: MyTableDisplayOneComponent },
   { path: 'nouveauJoueur', component: NouveauJoueurComponent },
   { path: 'nouveauPersonnage', component: NouveauPersonnageComponent },
-  { path: 'nouvelleTable', component: NouvelleTableComponent }
+  { path: 'nouvelleTable', component: NouvelleTableComponent },
+  { path: 'modifierjoueur/:id', component: ModifierJoueurComponent },
+  { path: 'modifierpersonnage/:id', component: ModifierPersonnageComponent },
+  { path: 'modifiertable/:id', component: ModifierTableComponent }
 ];
 
 @NgModule({

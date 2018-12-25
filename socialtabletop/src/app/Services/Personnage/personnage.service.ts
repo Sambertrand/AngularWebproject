@@ -32,6 +32,14 @@ export class PersonnageService {
     };
   
     return this.http.post<personnage>(this.url + '/newpersonnage', personnage, httpOptions);
-    }
+  }
+  putPersonnage(personnage: personnage, id: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 
+      'Access-Control-Allow-Origin' : '*', })
+    };
+  
+    return this.http.post<personnage>(this.url + '/updatepersonnage/' + id, personnage, httpOptions);
+  }  
   }
   

@@ -32,4 +32,12 @@ export class TableService {
 
     return this.http.post<mytable>(this.url + '/newtable', table, httpOptions);
   }
+  putTable(table: mytable, id:number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 
+      'Access-Control-Allow-Origin' : '*', })
+    };
+
+    return this.http.post<mytable>(this.url + '/updatemytable/'+ id, table, httpOptions);
+  }
 }

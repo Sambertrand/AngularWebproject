@@ -1,7 +1,6 @@
 <div class="card border-light mb-3" style="margin: auto; width: 33%; padding: 10px;">
     <a  class="card-header">{{joueur.name}} </a>
-    <!----<a class="btn btn-outline-warning" [routerLink]="['/joueur', joueur.id]">Changer</a>
-    -->
+    <a class="btn btn-outline-warning" [routerLink]="['/modifierjoueur', joueur.id]">Changer</a>
     <button class="btn btn-outline-danger" (click)="deleteJoueur(joueur.id)">Supprimer</button>
     <div class="card-body">
     <h4 class="card-title"> {{joueur.name}} </h4>
